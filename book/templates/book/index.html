@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+  <style type="text/css">
+    
+  </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> 피비 프레스(PB PRESS) </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/shop-item.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark fixed-top">
+      <div class="container">
+        <div>
+          <img src="static/images/pb.jpg" alt="" class="img-thumbnail" style="width:50px;">
+          <a class="navbar-brand" href="#"> PB PRESS </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <h2 class="my-4"> 도서목록 </h2>
+        </div>
+        <!-- /.col-lg-3 -->
+          <div class="col-lg-7">
+            {% for book in books %}
+              <div class="card mt-4">
+                <img class="card-img-top img-fluid" src="{{ book.image_url}}" alt="{{ book.title }}">
+              </div>
+              <div class="card mt-2">
+                <div class="card-body">
+                  <h3 class="card-text"> {{ book.title }} </h3>
+                  <h6 class="card-text"> 저자 : {{ book.author }} </h6>
+                  <h6 class="card-text"> 역자 : {{ book.translator }} </h6>
+                  <h6 class="card-text"> 출판 : {{ book.publisher }} </h6>
+                  <h6 class="card-text"> 출간 : {{ book.published_date }} </h6>
+                  <h6> 가격 : {{ book.price }}원</h6>
+                  <p class="card-text">
+                    {{ book.introduction }}
+                  </p>                  
+                </div>
+              </div>
+            {% endfor %}
+              <!-- /.card -->
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+            <div>
+            <!-- /.col-lg-9 -->
+      </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="fixed-bottom font-small" style="background:#343a40">
+      <div class="text-center py-1">
+        <p class="text-primary">
+          전화 : 053-201-8886   팩스 : 053-217-8886   계좌 : 신한은행 110-488-863390    주소 : (42699) 대구광역시 달서구 문화회관길 165 대구출판산업지원센터 605호
+        </p>
+      </div>
+    </footer>
+    <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>
